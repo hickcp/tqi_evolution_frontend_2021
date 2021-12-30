@@ -8,15 +8,20 @@
    
 </head>
 <body>
-    <label for="input_usuario_email">E-mail</label> <br>
-    <input id="input_usuario_email" name="username" type="email"> <br>
+    <form id="form_login">
+        <label for="input_usuario_email">E-mail</label> <br>
+        <input id="input_usuario_email" name="username" type="email"> <br>
 
-    <label for="input_usuario_senha">Senha</label> <br>
-    <input id="input_usuario_senha" name="password" type="password"> <br>
+        <label for="input_usuario_senha">Senha</label> <br>
+        <input id="input_usuario_senha" name="password" type="password"> <br>
 
-    <button id="button_usuario_login" type="submit">Login</button>
+        <button id="button_usuario_login" type="submit">Login</button>
 
-    <script href="login.js"></script>
+        <span id="feedback_usuario_login"></span>
+
+        <script href="login.js"></script>
+        
+    </form>
 </body>
 </html>
 

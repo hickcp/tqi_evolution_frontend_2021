@@ -6,12 +6,13 @@
     entao esse problema nao aconteceria kkk mas por segurança é bom sempre usar assim
 */
 window.onload = () => {
-    const inputNomeEmpresa = document.getElementById("input_empresa_nome");
+    const inputEndereco = document.getElementById("input_usuario_endereco");
     const inputNome = document.getElementById("input_usuario_nome");
     const inputEmail = document.getElementById("input_usuario_email");
     const inputRg = document.getElementById("input_usuario_rg");
     const inputCpf = document.getElementById("input_usuario_cpf");
     const inputSenha = document.getElementById("input_usuario_senha");
+    const inputRenda = document.getElementById("input_usuario_renda")
 
     const btnCadastrar = document.getElementById("button_usuario_cadastrar");
 
@@ -25,18 +26,19 @@ window.onload = () => {
         event.preventDefault();
 
         const payloadUsuario = {
-            nome_empresa: inputNomeEmpresa.value,
-            usuarios:[{
+
+                endereco_completo: inputEndereco.value,
                 nome_usuario: inputNome.value,
                 email: inputEmail.value,
                 rg: inputRg.value,
                 cpf: inputCpf.value,
-                senha: inputSenha.value
-            }]
+                senha: inputSenha.value,
+                renda: inputRenda.value
+            
             
         }
 
-        if (payloadUsuario.nome_empresa && payloadUsuario.usuarios) {
+        if (payloadUsuario) {
             fetch(endpointCadastro, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
