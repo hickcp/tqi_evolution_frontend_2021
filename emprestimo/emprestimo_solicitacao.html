@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitação de Emprestimo</title>
+</head>
+<body>
+    <h4 class="titulo">Solicitar Empréstimo</h4>
+    <form id="form_aluno">
+        
+        <br>
+
+        <label for="input_emprestimo_valor">Valor do Empréstimo</label> <br>
+        <input id="input_emprestimo_valor" name="valor" type="text"> <br>
+
+        <br>
+
+        <label for="input_emprestimo_parcelas">Quantidade de Parcelas</label> <br>
+        <input id="input_emprestimo_parcelas" name="parcelas" type="number"> <br>
+
+        <br>
+
+        <label for="input_emprestimo_data_parcelas">Data da Primeira Parcela</label> <br>
+        <input id="input_emprestimo_data_parcelas" name="data_parcelas" type="date"> <br>
+
+        <br>
+
+        <br>
+
+        <label for="input_emprestimo_chave_estrangeira">Chave Estrangeira</label> <br>
+        <input id="input_emprestimo_chave_estrangeira" name="chave_estrangeira" type="Long"> <br>
+
+        <br>
+
+        
+
+        <button id="button_emprestimo_solicitar" type="submit">Solicitar Empréstimo</button>
+        <a href="/homepage/homepage.html">Inicio</a>
+    </form>
+
+    
+
+    <span id="feedback_emprestimo_solicitacar"></span>
+
+    <script src="emprestimo_solicitacao.js"></script>
+</body>
+</html>
