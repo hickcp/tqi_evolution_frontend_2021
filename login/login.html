@@ -4,27 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-   
+    <title>Cadastro usuario</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form id="form_login">
-        <label for="input_usuario_email">E-mail</label> <br>
-        <input id="input_usuario_email" name="username" type="email"> <br>
+    <h4 class="titulo">Login</h4>
 
-        <label for="input_usuario_senha">Senha</label> <br>
-        <input id="input_usuario_senha" name="password" type="password"> <br>
+    <form id="form_login" class="formulario-login">
+        <div class="formulario-login__campo">
+            <label for="input_usuario_email">E-Mail</label>
+            <input id="input_usuario_email" name="email" type="email" value="usuario@email.com">
+        </div>
 
-        <button id="button_usuario_login" type="submit">Login</button>
+        <div class="formulario-login__campo">
+            <label for="input_usuario_senha">Senha</label>
+            <input id="input_usuario_senha" name="email" type="password" value="@Senha123">
+        </div>
 
-        <span id="feedback_usuario_login"></span>
-
-        <script href="login.js"></script>
+        <button id="button_usuario_login" class="formulario-login__submit" type="submit">Login</button>
         <a href="/index.html">Inicio</a>
     </form>
+
+    <span id="feedback_login" class="feedback"></span>
+
+    <script src="login.js"></script>
 </body>
 </html>
-
-
-
-

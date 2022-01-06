@@ -1,39 +1,34 @@
-window.onload = () =>{
-const login_usuario_username = document.getElementById("username")
-const login_usuario_password = document.getElementById("password")
+window.onload = () => {
+    const inputEmail = document.getElementById("input_usuario_email");
+    const inputSenha = document.getElementById("input_usuario_senha");
 
-const feedbackLogin = document.getElementById("feedback_usuario_login");
+    const btnLogin = document.getElementById("button_usuario_login");
 
-const btnLogin = document.getElementById("button_usuario_login");
+    const feedbackLogin = document.getElementById("feedback_login");
 
-const endpointLogin = "http://localhost:8080/login"
+    const endpointLogin = "http://localhost:8080/login";
 
     btnLogin.addEventListener("click", event => {
         event.preventDefault();
 
-        const payLoginUsuario = {
-        username:login_usuario_username,
-        password:login_usuario_password
-    }
+        const payloadLogin = {
+            email: inputEmail.value,
+            senha: inputSenha.value,
+        }
 
-    if (payloadLogin.login_usuario_username && payloadLogin.login_usuario_password){
+        if (payloadLogin.email && payloadLogin.senha) {
+            fetch(endpointLogin, {
+                method: "POST",
+                body: JSON.stringify(payloadLogin)
+            })
+            .then(res => res.json())
+            .then(res => {
+                window.localStorage.setItem("token", res.token);
 
-        fetch(payLoginUsuario, {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify(payLoginUsuario)
-        }).then(
-            succes => {
-                feedbackLogin.innerText = `Login efetuado!`
-            },
-            error =>{
-                feedbackLogin.innerText = `E-mail ou Senha incorretos!`
-            }
-        );
-    }
-});
-
-  
+                window.location = "homepage.html";
+            });
+        } else {
+            feedbackLogin.innerText = "Preencha todos os campos!"
+        }
+    });
 };
-
-
