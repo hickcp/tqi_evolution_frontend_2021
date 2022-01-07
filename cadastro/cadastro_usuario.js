@@ -27,8 +27,8 @@ window.onload = () => {
 
         const payloadUsuario = {
 
-                endereco_completo: inputEndereco.value,
-                nome_usuario: inputNome.value,
+                enderecoCompleto: inputEndereco.value,
+                nomeUsuario: inputNome.value,
                 email: inputEmail.value,
                 rg: inputRg.value,
                 cpf: inputCpf.value,
